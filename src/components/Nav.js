@@ -1,16 +1,19 @@
-const Nav = () => {
+import Reservations from './Reservations.js'
+
+const Nav = (props) => {
   return(
-    <nav className="nav-menu">
-      <div>
-        <h1>MyTitle</h1>
+    <nav className="nav">
+      <div className="title">
+        <h1>My</h1>
+        <h1>App</h1>
       </div>
       <div>
         <ul>
-          <li>home</li>
-          <li>events</li>
-          <li>reservations</li>
-          <li>account</li>
-          <li>login</li>
+          <li><a href="#">home</a></li>
+          <li><a href="#">events</a></li>
+          <li><a href="#" className="reservations" onClick={() => props.handleShowReservation()}>reservations {props.reservations}</a></li>
+          <li><a href="#">account</a></li>
+          <li><a href="#">login</a></li>
         </ul>
       </div>
     </nav>

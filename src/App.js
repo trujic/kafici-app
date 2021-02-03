@@ -37,7 +37,7 @@ function App() {
   {
     id: 5,
     title: "toster",
-    image: "https://lh3.googleusercontent.com/proxy/vPkOhspkZg3cs1pGGtYIDZn_DYzGNP7xUas18JYaSNTVprSzgKzeCSpkBntgtd3kVzPOqtjofE1O1AL9QLgNOlfwmK7GwNZkhcl49Q",
+    image: "https://lh3.googleusercontent.com/proxy/-BQv5rScwoNV8sd_cnIUM5Nv4UcfVkvMMRcKsn-oEIhHEvLtJlM8Q7yptoRaI9WVJnnIoRI3MLSnKbJNr05gOE6gC5gVvHiD-fuyFg",
     tables: Math.floor(Math.random() * 10)
   },
   {
@@ -54,6 +54,11 @@ function App() {
   }
 ])
 
+
+  const [reservations, setReservations] = useState(null)
+  const [showReservations, setShowReservations] = useState(false)
+  const [addReservation, setAddReservation] = useState([])
+
 //GIVES A RANDOM NUMBER BETWEEN (0 - 10) EVERY 10 SECONDS
   useEffect(() => {
     const interval = setInterval(() => {
@@ -62,7 +67,7 @@ function App() {
         bar.tables = Math.floor(Math.random() * 10)
         setBars(randomTables)
       })
-    }, 10000);
+    }, 15000);
     return () => clearInterval(interval);
   }, [])
 
@@ -77,16 +82,43 @@ function App() {
       updateBars.filter((bar) => {
         if (bar.id === id) {
           bar.tables = tables - 1;
+          let newReservation = [...addReservation];
+          newReservation.push({title: bar.title, id: Math.random()});
+          setAddReservation(newReservation)
         }
       })
       setBars(updateBars)
+      setReservations(reservations + 1);
     }
+  }
+
+
+//REMOVES SPECIFIC ITEM FROM THE RESERVATION SECTION, ADDS THE TABLE BACK TO THE BAR, UPDATES THE NUMBER OF RESERVATIONS
+  const cancelReservation = (id, title) => {
+    const updatedRes = addReservation.filter(asd => asd.id !== id)
+    setAddReservation(updatedRes)
+    bars.map((bar) => {
+      if (title === bar.title) {
+        bar.tables += 1;
+      }
+    })
+    if (reservations === 1) {
+      console.log(reservations)
+      setReservations(null)
+    } else {
+      setReservations(reservations - 1)
+    }
+  }
+
+  const handleShowReservation = () => {
+    setShowReservations(!showReservations)
+    console.log(showReservations)
   }
 
   return (
     <div className="App">
-      <Nav />
-      <Main key={bars.id} handleReservation={handleReservation} bars={bars}/>
+      <Nav reservations={reservations} showReservations={showReservations} handleShowReservation={handleShowReservation}/>
+      <Main handleShowReservation={handleShowReservation} showReservations={showReservations} cancelReservation={cancelReservation} key={bars.id} addReservation={addReservation} reservations={reservations} handleReservation={handleReservation} bars={bars}/>
     </div>
   );
 }

@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  background-color: #121212;
+}
+
+h1, h2, h3, p, li {
+  font-family: "Poppins", sans-serif;
+  color: #F1E3E4;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 120px;
+}
+.nav .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav .title h1 {
+  color: #D9E2EC;
+  font-weight: normal;
+}
+.nav .title h1:last-child {
+  color: #BCA661;
+}
+.nav ul {
+  display: flex;
+}
+.nav ul a {
+  color: #F1E3E4;
+  text-decoration: none;
+}
+.nav ul a:focus {
+  color: white;
+  font-weight: bold;
+}
+.nav ul a:hover {
+  color: #adadad;
+}
+.nav ul li {
+  list-style: none;
+  text-transform: capitalize;
+  margin: 0 30px;
+  letter-spacing: 1.2px;
+  font-weight: normal;
+}
+.nav ul li:hover {
+  cursor: pointer;
+}
+
+.main {
+  width: 94%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+.main .bar-box {
+  margin: 25px 3px;
+  background-color: #292929;
+}
+.main .bar-box button {
+  margin: 5px;
+  padding: 8px 20px;
+  border: 1px solid #BCA661;
+  border-radius: 24px;
+  outline: none;
+  color: black;
+  background-color: #BCA661;
+}
+.main .bar-box button:hover {
+  cursor: pointer;
+  background-color: #9D8743;
+  border: 1px solid #9D8743;
+}
+.main .bar-box h2 {
+  padding: 10px 8px;
+  text-transform: capitalize;
+  letter-spacing: 1.2px;
+  font-weight: normal;
+}
+.main .bar-box img {
+  width: 100%;
+  height: 240px;
+  opacity: 0.7;
+}
+.main .bar-box img:hover {
+  opacity: 0.3;
+}
+.main .actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 8px;
+  background-color: #292929;
+}
+.main .actions h3 {
+  font-weight: normal;
+  letter-spacing: 1.2;
+}
+.main .actions .button {
+  margin: 5px;
+  padding: 8px 20px;
+  border: 1px solid #BCA661;
+  border-radius: 24px;
+  outline: none;
+  color: black;
+  background-color: #BCA661;
+}
+.main .actions .button:hover {
+  cursor: pointer;
+  background-color: #9D8743;
+  border: 1px solid #9D8743;
+}
+
+.reservations-block {
+  padding: 0 30px;
+  min-height: 15vh;
+  background-color: #292929;
+  width: 300px;
+  position: absolute;
+  top: 8%;
+  right: 16%;
+  z-index: 100;
+}
+.reservations-block h2 {
+  padding: 10px 0;
+  font-weight: normal;
+}
+.reservations-block .reservation-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.reservations-block .reservation-text h2:last-child:hover {
+  cursor: pointer;
+}
+
+.your-reservation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+}
+.your-reservation h3 {
+  font-weight: normal;
+  text-transform: capitalize;
+}
+.your-reservation button {
+  margin: 5px;
+  font-size: 18px;
+  padding: 6px 10px;
+  border: 1px solid #AE2D2D;
+  background-color: #AE2D2D;
+  color: white;
+  border-radius: 50%;
+  outline: none;
+}
+.your-reservation button:hover {
+  cursor: pointer;
+  padding: 9px 13px;
+  transition: 0.3s;
+}
+
+/*# sourceMappingURL=index.css.map */

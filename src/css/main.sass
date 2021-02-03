@@ -1,0 +1,116 @@
+@import "variables.sass"
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+html
+  font-size: 100%
+  background-color: $bgcolor
+
+
+h1, h2, h3, p, li
+  font-family: 'Poppins', sans-serif
+  color: $primary
+
+.nav
+  @include flex
+  padding: 40px 120px
+  .title
+    @include flex
+    h1
+      color: #D9E2EC
+      font-weight: normal
+      &:last-child
+        color: #BCA661
+  ul
+    display: flex
+    a
+      color: $primary
+      text-decoration: none
+      &:focus
+        color: white
+        font-weight: bold
+      &:hover
+        color: #adadad
+    li
+      list-style: none
+      text-transform: capitalize
+      margin: 0 30px
+      letter-spacing: 1.2px
+      font-weight: normal
+      &:hover
+        cursor: pointer
+
+
+.main
+  width: 94%
+  margin: auto
+  display: grid
+  grid-template-columns: auto auto auto auto
+  .bar-box
+    margin: 25px 3px
+    background-color: #292929
+    button
+      @include button
+    h2
+      padding: 10px 8px
+      text-transform: capitalize
+      letter-spacing: 1.2px
+      font-weight: normal
+    img
+      width: 100%
+      height: 240px
+      opacity: 0.7
+      &:hover
+        opacity: 0.3
+  .actions
+    @include flex
+    padding: 8px 8px
+    background-color: #292929
+    h3
+
+      font-weight: normal
+      letter-spacing: 1.2
+    .button
+      @include button
+
+.reservations-block
+  padding: 0 30px
+  min-height: 15vh
+  background-color: #292929
+  width: 300px
+  position: absolute
+  top: 8%
+  right: 16%
+  z-index: 100
+  h2
+   padding: 10px 0
+   font-weight: normal
+  .reservation-text
+    @include flex
+    h2
+      &:last-child
+        &:hover
+          cursor: pointer
+
+.your-reservation
+  @include flex
+  padding: 8px 12px
+  h3
+    font-weight: normal
+    text-transform: capitalize
+  button
+    margin: 5px
+    font-size: 18px
+    padding: 6px 10px
+    border: 1px solid #AE2D2D
+    background-color: #AE2D2D
+    color: white
+    border-radius: 50%
+    outline: none
+    &:hover
+      cursor: pointer
+      padding: 9px 13px
+      transition: 0.3s
